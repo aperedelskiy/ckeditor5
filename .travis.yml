@@ -18,9 +18,9 @@ before_install:
   - sh -e /etc/init.d/xvfb start
   - npm i -g yarn
 install:
-  - yarn
   - yarn add mgit2 --ignore-workspace-root-check
   - mgit bootstrap --resolver-url-template="https://github.com/\${ path }.git"
+  - yarn
 script:
   - yarn run test --reporter=dots
   - yarn run docs:api -- --validate-only
