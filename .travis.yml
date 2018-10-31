@@ -16,6 +16,7 @@ cache:
 before_install:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
+  - npm i -g yarn
 install:
   - yarn
   - yarn add mgit2 --ignore-workspace-root-check
