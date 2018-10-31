@@ -18,10 +18,10 @@ before_install:
   - sh -e /etc/init.d/xvfb start
 install:
   - yarn
-  - yarn add mgit --ignore-workspace-root-check
+  - yarn add mgit2 --ignore-workspace-root-check
   - mgit bootstrap --resolver-url-template="https://github.com/\${ path }.git"
 script:
-  - yarn run --reporter=dots
+  - yarn run test --reporter=dots
   - yarn run docs:api -- --validate-only
   - 'if [ $TRAVIS_TEST_RESULT -eq 0 ]; then
   	  travis_wait yarn run docs:build-and-publish-nightly;
